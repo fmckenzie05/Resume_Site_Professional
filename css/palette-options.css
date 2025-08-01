@@ -1,0 +1,91 @@
+/* PALETTE OPTIONS - Choose one and replace in themes.css */
+
+/* OPTION 1: Cyber Blue (Professional + Modern) */
+.cyber-blue {
+    /* Light Theme */
+    --brand-purple: #1e40af;    /* Deep blue */
+    --brand-orange: #0ea5e9;    /* Sky blue */
+    --brand-green: #06b6d4;     /* Cyan */
+    --brand-yellow: #3b82f6;    /* Blue */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #3b82f6;    /* Bright blue */
+    --brand-orange-dark: #0ea5e9;    /* Sky blue */
+    --brand-green-dark: #06b6d4;     /* Cyan */
+    --brand-yellow-dark: #60a5fa;    /* Light blue */
+}
+
+/* OPTION 2: Neon Tech (Fun + Professional) */
+.neon-tech {
+    /* Light Theme */
+    --brand-purple: #7c3aed;    /* Purple */
+    --brand-orange: #f59e0b;    /* Amber */
+    --brand-green: #10b981;     /* Emerald */
+    --brand-yellow: #ef4444;    /* Red accent */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #a78bfa;    /* Light purple */
+    --brand-orange-dark: #fbbf24;    /* Golden */
+    --brand-green-dark: #34d399;     /* Mint green */
+    --brand-yellow-dark: #f87171;    /* Coral red */
+}
+
+/* OPTION 3: Ocean Depths (Cool + Professional) */
+.ocean-depths {
+    /* Light Theme */
+    --brand-purple: #1e3a8a;    /* Navy blue */
+    --brand-orange: #0891b2;    /* Teal */
+    --brand-green: #059669;     /* Emerald */
+    --brand-yellow: #0d9488;    /* Teal green */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #3b82f6;    /* Blue */
+    --brand-orange-dark: #06b6d4;    /* Cyan */
+    --brand-green-dark: #10b981;     /* Emerald */
+    --brand-yellow-dark: #14b8a6;    /* Teal */
+}
+
+/* OPTION 4: Sunset Vibes (Warm + Professional) */
+.sunset-vibes {
+    /* Light Theme */
+    --brand-purple: #be185d;    /* Pink */
+    --brand-orange: #ea580c;    /* Orange */
+    --brand-green: #dc2626;     /* Red */
+    --brand-yellow: #d97706;    /* Amber */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #ec4899;    /* Hot pink */
+    --brand-orange-dark: #fb923c;    /* Orange */
+    --brand-green-dark: #ef4444;     /* Red */
+    --brand-yellow-dark: #fbbf24;    /* Yellow */
+}
+
+/* OPTION 5: Forest Tech (Nature + Tech) */
+.forest-tech {
+    /* Light Theme */
+    --brand-purple: #065f46;    /* Dark green */
+    --brand-orange: #92400e;    /* Brown */
+    --brand-green: #059669;     /* Emerald */
+    --brand-yellow: #a16207;    /* Amber */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #10b981;    /* Emerald */
+    --brand-orange-dark: #f59e0b;    /* Amber */
+    --brand-green-dark: #34d399;     /* Light emerald */
+    --brand-yellow-dark: #fbbf24;    /* Golden */
+}
+
+/* OPTION 6: Electric Dreams (Fun + Vibrant) */
+.electric-dreams {
+    /* Light Theme */
+    --brand-purple: #6b21a8;    /* Purple */
+    --brand-orange: #ea580c;    /* Orange */
+    --brand-green: #16a34a;     /* Green */
+    --brand-yellow: #ca8a04;    /* Yellow */
+    
+    /* Dark Theme */
+    --brand-purple-dark: #a855f7;    /* Bright purple */
+    --brand-orange-dark: #fb923c;    /* Bright orange */
+    --brand-green-dark: #22c55e;     /* Bright green */
+    --brand-yellow-dark: #eab308;    /* Bright yellow */
+}

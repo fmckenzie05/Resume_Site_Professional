@@ -1,0 +1,479 @@
+/* Theme System with Dark Purple, Orange, Green, Yellow Palette */
+
+:root {
+    /* Light Theme Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f3ff;
+    --bg-card: #ffffff;
+    --text-primary: #6b21a8;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    
+    /* Electric Dreams Palette - Light Theme */
+    --brand-purple: #6b21a8;    /* Purple - primary */
+    --brand-orange: #ea580c;    /* Orange - secondary */
+    --brand-green: #16a34a;     /* Green - success */
+    --brand-yellow: #ca8a04;    /* Yellow - warning */
+    
+    /* Lighter versions for backgrounds */
+    --purple-light: #f5f3ff;
+    --orange-light: #fff7ed;
+    --green-light: #f0fdfa;
+    --yellow-light: #fffbeb;
+    
+    /* Accent Colors */
+    --accent-light: #e2e8f0;
+    --accent-medium: #cbd5e1;
+    --accent-dark: #94a3b8;
+    
+    /* Button Colors */
+    --btn-primary-bg: var(--brand-purple);
+    --btn-primary-hover: #1e1065;
+    --btn-secondary-bg: var(--brand-orange);
+    --btn-success-bg: var(--brand-green);
+    --btn-warning-bg: var(--brand-yellow);
+    
+    /* Border Colors */
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(45, 27, 105, 0.1);
+    --shadow-medium: rgba(45, 27, 105, 0.15);
+    --shadow-dark: rgba(45, 27, 105, 0.25);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+    --bg-primary: #1a1625;
+    --bg-secondary: #252137;
+    --bg-card: #2f2b42;
+    --text-primary: #ffffff;
+    --text-secondary: #f1f5f9;
+    --text-muted: #e2e8f0;
+    
+    /* Electric Dreams Palette - Dark Theme */
+    --brand-purple: #a855f7;    /* Bright purple */
+    --brand-orange: #fb923c;    /* Bright orange */
+    --brand-green: #22c55e;     /* Bright green */
+    --brand-yellow: #eab308;    /* Bright yellow */
+    
+    /* Darker versions for backgrounds */
+    --purple-light: #2d1b4e;
+    --orange-light: #451a03;
+    --green-light: #134e4a;
+    --yellow-light: #451a03;
+    
+    /* Accent Colors - Dark */
+    --accent-light: #4c4b63;
+    --accent-medium: #64748b;
+    --accent-dark: #94a3b8;
+    
+    /* Button Colors - Dark */
+    --btn-primary-bg: var(--brand-purple);
+    --btn-primary-hover: #6d28d9;
+    --btn-secondary-bg: var(--brand-orange);
+    --btn-success-bg: var(--brand-green);
+    --btn-warning-bg: var(--brand-yellow);
+    
+    /* Border Colors - Dark */
+    --border-light: #4c4b63;
+    --border-medium: #64748b;
+    
+    /* Shadow Colors - Dark */
+    --shadow-light: rgba(124, 58, 237, 0.1);
+    --shadow-medium: rgba(124, 58, 237, 0.15);
+    --shadow-dark: rgba(124, 58, 237, 0.25);
+}
+
+/* Base Theme Styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.navbar-brand {
+    color: var(--text-primary) !important;
+}
+
+/* Dark theme specific navigation fixes */
+[data-theme="dark"] .navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--brand-purple) !important;
+}
+
+/* Navbar toggler for mobile */
+.navbar-toggler {
+    border-color: var(--border-medium);
+    padding: 4px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(45, 27, 105, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 27, 105, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28248, 250, 252, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-orange) 60%, var(--brand-yellow) 100%);
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(5, 150, 105, 0.1) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Cards */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    color: var(--text-primary);
+}
+
+.card-title {
+    color: var(--text-primary);
+}
+
+.card-text {
+    color: var(--text-secondary);
+}
+
+/* Sections */
+.bg-light {
+    background-color: var(--bg-secondary) !important;
+}
+
+.skills-section {
+    background-color: var(--bg-secondary);
+}
+
+.blog-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.resume-header {
+    background-color: var(--bg-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+    border-color: var(--btn-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.btn-outline-primary {
+    color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
+    color: white;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--brand-purple);
+    color: var(--brand-purple);
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.theme-toggle:hover {
+    background-color: var(--brand-purple);
+    color: white;
+    transform: scale(1.05);
+}
+
+.theme-toggle i {
+    margin-right: 5px;
+}
+
+/* Material Icons Colors */
+.material-icons.text-primary {
+    color: var(--brand-purple) !important;
+}
+
+/* Skills section icon colors */
+.skills-section .card:nth-child(1) .material-icons {
+    color: var(--brand-purple) !important;
+}
+
+.skills-section .card:nth-child(2) .material-icons {
+    color: var(--brand-orange) !important;
+}
+
+.skills-section .card:nth-child(3) .material-icons {
+    color: var(--brand-green) !important;
+}
+
+/* Blog category colors */
+.category-filter[data-category="it"] {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+}
+
+.category-filter[data-category="supply-chain"] {
+    border-color: var(--brand-orange);
+    color: var(--brand-orange);
+}
+
+.category-filter[data-category="digital-transformation"] {
+    border-color: var(--brand-green);
+    color: var(--brand-green);
+}
+
+.category-filter[data-category="it"]:hover,
+.category-filter[data-category="it"].active {
+    background-color: var(--brand-purple);
+    border-color: var(--brand-purple);
+}
+
+.category-filter[data-category="supply-chain"]:hover,
+.category-filter[data-category="supply-chain"].active {
+    background-color: var(--brand-orange);
+    border-color: var(--brand-orange);
+}
+
+.category-filter[data-category="digital-transformation"]:hover,
+.category-filter[data-category="digital-transformation"].active {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+}
+
+/* Special Color Classes */
+.text-orange {
+    color: var(--brand-orange) !important;
+}
+
+.text-green {
+    color: var(--brand-green) !important;
+}
+
+.text-yellow {
+    color: var(--brand-yellow) !important;
+}
+
+.bg-orange {
+    background-color: var(--brand-orange) !important;
+}
+
+.bg-green {
+    background-color: var(--brand-green) !important;
+}
+
+.bg-yellow {
+    background-color: var(--brand-yellow) !important;
+}
+
+/* Form Controls */
+.form-control {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--bg-card);
+    border-color: var(--brand-purple);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Blog Category Filters */
+.category-filter {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-medium);
+    transition: all 0.3s ease;
+}
+
+.category-filter:hover {
+    background-color: var(--brand-purple);
+    color: white;
+    border-color: var(--brand-purple);
+}
+
+.category-filter.active {
+    background-color: var(--brand-purple);
+    color: white;
+    border-color: var(--brand-purple);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-card) !important;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+footer a {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: var(--brand-purple) !important;
+}
+
+/* Dark theme footer adjustments */
+[data-theme="dark"] footer {
+    background-color: var(--bg-card) !important;
+    color: #ffffff;
+}
+
+[data-theme="dark"] footer a {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] footer a:hover {
+    color: var(--brand-purple) !important;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme transition class for smooth switching */
+.theme-transitioning * {
+    transition: all 0.3s ease !important;
+}
+
+/* Additional color utility classes for the palette */
+.accent-purple { color: var(--brand-purple) !important; }
+.accent-orange { color: var(--brand-orange) !important; }
+.accent-green { color: var(--brand-green) !important; }
+.accent-yellow { color: var(--brand-yellow) !important; }
+
+.bg-accent-purple { background-color: var(--brand-purple) !important; }
+.bg-accent-orange { background-color: var(--brand-orange) !important; }
+.bg-accent-green { background-color: var(--brand-green) !important; }
+.bg-accent-yellow { background-color: var(--brand-yellow) !important; }
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-orange) 50%, var(--brand-yellow) 100%);
+    box-shadow: inset 0 0 100px rgba(124, 58, 237, 0.1);
+}
+
+[data-theme="dark"] .hero-section::before {
+    background: linear-gradient(45deg, transparent 30%, rgba(245, 158, 11, 0.1) 50%, transparent 70%);
+}
+
+[data-theme="dark"] .navbar {
+    background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] img {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] .shadow-sm {
+    box-shadow: 0 2px 4px var(--shadow-medium), 0 0 20px rgba(124, 58, 237, 0.05) !important;
+}
+
+[data-theme="dark"] .shadow {
+    box-shadow: 0 4px 8px var(--shadow-dark), 0 0 30px rgba(124, 58, 237, 0.08) !important;
+}
+
+[data-theme="dark"] .card:hover {
+    box-shadow: 0 8px 25px var(--shadow-medium), 0 0 40px rgba(124, 58, 237, 0.12);
+}
+
+[data-theme="dark"] .btn-primary {
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+/* Dark theme header and title fixes */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .card-title {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .display-4 {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .lead {
+    color: #f1f5f9 !important;
+}

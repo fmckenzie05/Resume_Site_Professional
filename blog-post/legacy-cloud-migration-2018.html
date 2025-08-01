@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrating Legacy Systems to the Cloud: Lessons Learned - Fernando McKenzie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Dark Theme CSS -->
+    <link rel="stylesheet" href="../styles.css?v=20250127-1900-dark">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose { max-width: none; }
+        .code-block { background: #1a1a1a; color: #e5e5e5; }
+        .highlight { background: #fef3cd; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="../index.html" class="text-blue-600 hover:text-blue-800 font-semibold">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                </a>
+                <a href="../blog.html" class="text-blue-600 hover:text-blue-800 font-semibold">
+                    <i class="fas fa-blog mr-2"></i>All Blog Posts
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Migrating Legacy Systems to the Cloud: Lessons Learned</h1>
+            <div class="flex flex-wrap items-center text-gray-600 mb-6">
+                <span class="mr-6"><i class="fas fa-calendar mr-2"></i>March 15, 2018</span>
+                <span class="mr-6"><i class="fas fa-user mr-2"></i>Fernando McKenzie</span>
+                <span><i class="fas fa-clock mr-2"></i>15 min read</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Cloud Migration</span>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Legacy Systems</span>
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AWS</span>
+                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Infrastructure</span>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="prose prose-lg max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Introduction</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                In 2018, our organization faced a critical decision: continue maintaining aging on-premise infrastructure or take the leap into cloud computing. What started as a cost-cutting initiative became a transformative journey that modernized our entire IT operations stack.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Challenge</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">Our legacy systems included:</p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li><strong>15-year-old ERP system</strong> running on Windows Server 2003</li>
+                <li><strong>Custom inventory management</strong> built in VB.NET</li>
+                <li><strong>Oracle database</strong> with over 500GB of critical supply chain data</li>
+                <li><strong>Monolithic architecture</strong> with tight coupling between components</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Key Pain Points:</h3>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li><strong>Security vulnerabilities</strong> in outdated operating systems</li>
+                <li><strong>Limited scalability</strong> during peak shipping seasons</li>
+                <li><strong>High maintenance costs</strong> for legacy hardware</li>
+                <li><strong>Compliance issues</strong> with modern data protection standards</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Migration Strategy</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Phase 1: Assessment and Planning (Q1 2018)</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">We conducted a comprehensive audit of our existing systems:</p>
+            
+            <div class="code-block p-4 rounded-lg mb-6">
+                <pre class="text-sm"><code># Discovery script for inventory analysis
+#!/bin/bash
+for server in $(cat servers.txt); do
+    ssh $server "systeminfo | grep 'OS Name\|OS Version'"
+    ssh $server "df -h"
+    ssh $server "netstat -tuln"
+done</code></pre>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Key Findings:</strong></p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li>67% of servers were running end-of-life operating systems</li>
+                <li>Database queries averaged 3.2 seconds response time</li>
+                <li>Peak traffic caused 23% system slowdowns</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Phase 2: Lift and Shift (Q2 2018)</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">We started with AWS EC2 instances mirroring our on-premise setup:</p>
+            
+            <div class="code-block p-4 rounded-lg mb-6">
+                <pre class="text-sm"><code># Basic EC2 configuration
+instance_type: m5.large
+ami: ami-0abcdef1234567890
+security_groups:
+  - web-tier-sg
+  - app-tier-sg
+  - db-tier-sg</code></pre>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Initial Results:</strong></p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li>✅ 40% reduction in infrastructure costs</li>
+                <li>✅ 99.9% uptime vs. 97.2% on-premise</li>
+                <li>⚠️ Still had performance bottlenecks</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Results and Impact</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Performance Improvements:</h3>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li><strong>Database query time:</strong> 3.2s → 0.8s (75% improvement)</li>
+                <li><strong>System availability:</strong> 97.2% → 99.9%</li>
+                <li><strong>Peak load handling:</strong> 50% improvement in concurrent users</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Cost Benefits:</h3>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li><strong>Infrastructure costs:</strong> 40% reduction year-over-year</li>
+                <li><strong>Maintenance overhead:</strong> 60% reduction in IT staff time</li>
+                <li><strong>Energy costs:</strong> 100% elimination of data center power</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Business Impact:</h3>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li><strong>Faster time-to-market</strong> for new features</li>
+                <li><strong>Improved customer satisfaction</strong> due to system reliability</li>
+                <li><strong>Enhanced security posture</strong> with cloud-native tools</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Lessons Learned</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">1. Start with Assessment</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">Don't rush into migration. Thorough assessment saved us from costly mistakes.</p>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">2. Plan for the Unexpected</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">We allocated 30% buffer time and budget - used every bit of it.</p>
+
+            <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-4">3. Involve End Users Early</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">User training and change management were as important as technical implementation.</p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Conclusion</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                The cloud migration project was challenging but transformative. We not only achieved our cost reduction goals but positioned ourselves for future innovation. The key was treating it not just as an infrastructure change, but as a digital transformation opportunity.
+            </p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Key Takeaways:</strong></p>
+            <ul class="list-disc pl-6 text-gray-700 mb-6">
+                <li>Cloud migration is a journey, not a destination</li>
+                <li>Plan thoroughly, execute incrementally</li>
+                <li>Monitor and optimize continuously</li>
+                <li>Invest in team training and change management</li>
+            </ul>
+        </div>
+
+        <!-- Author Bio -->
+        <div class="border-t border-gray-200 pt-8 mt-12">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        FM
+                    </div>
+                </div>
+                <div class="ml-4">
+                    <h4 class="text-lg font-semibold text-gray-900">Fernando McKenzie</h4>
+                    <p class="text-gray-600">IT Operations Specialist with expertise in cloud migration, DevOps, and supply chain technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mt-12 border-t border-gray-200 pt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="devops-supply-chain-2019.html" class="block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">DevOps in Supply Chain Operations</h4>
+                    <p class="text-gray-600 text-sm mb-3">How we brought modern DevOps practices to traditional supply chain operations.</p>
+                    <span class="text-blue-600 text-sm font-medium">Read more →</span>
+                </a>
+                <a href="remote-infrastructure-2020.html" class="block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">Remote Infrastructure Management</h4>
+                    <p class="text-gray-600 text-sm mb-3">Managing infrastructure during COVID-19 and the remote work transformation.</p>
+                    <span class="text-blue-600 text-sm font-medium">Read more →</span>
+                </a>
+            </div>
+        </div>
+    </article>
+</body>
+</html> 

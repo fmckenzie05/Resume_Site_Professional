@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building My Home Lab: Network Segmentation & Monitoring - Complete setup guide by Fernando McKenzie">
+    <title>Building My Home Lab - Fernando A. McKenzie</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Dark Theme CSS -->
+    <link rel="stylesheet" href="../styles.css?v=20250127-1900-dark">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose { max-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-xl font-bold text-gray-800">SirCodeX</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Technical Blog</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i>All Posts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-sm text-green-200 font-medium mb-4">
+                    <i class="fas fa-cogs mr-2"></i>AUTOMATION
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    Building My Home Lab: Network Segmentation & Monitoring
+                </h1>
+                <div class="flex flex-wrap items-center gap-6 text-green-100">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar mr-2"></i>
+                        <span>Published on December 5, 2024</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>15 minute read</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-eye mr-2"></i>
+                        <span>3,241 views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Abstract -->
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 mb-8 rounded-r-lg">
+                    <h3 class="text-lg font-semibold text-green-900 mb-2">Abstract</h3>
+                    <p class="text-green-800">
+                        Complete guide to building a professional-grade home lab with enterprise networking, security monitoring, 
+                        and automation capabilities. Investment: ~$2,800 over 6 months with immediate ROI through career advancement.
+                    </p>
+                </div>
+
+                <!-- Article Body -->
+                <div class="prose prose-lg max-w-none">
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">The Vision</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        As an IT professional transitioning from supply chain operations, I needed a comprehensive home lab to practice 
+                        enterprise-level networking, security, and automation concepts. This lab needed to simulate real business 
+                        environments while staying within a reasonable budget.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Lab Architecture Overview</h2>
+                    <pre class="bg-gray-900 text-gray-300 p-4 rounded-lg overflow-x-auto mb-6"><code>Internet ←→ [pfSense Firewall] ←→ [Managed Switch] ←→ [Lab Network]
+                    ↓                      ↓
+              [DMZ VLAN]            [Internal VLANs]
+                    ↓                      ↓
+            [Web Services]     [Domain Controller, Proxmox, etc.]</code></pre>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Hardware Foundation</h3>
+                    
+                    <!-- Hardware Grid -->
+                    <div class="grid md:grid-cols-2 gap-6 my-8">
+                        <div class="bg-white border rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Network Infrastructure</h4>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>🔥 <strong>pfSense Box:</strong> Protectli VP2420 (4-port Intel NICs)</li>
+                                <li>🔌 <strong>Managed Switch:</strong> UniFi Switch 24 PoE (24 ports + SFP+)</li>
+                                <li>📶 <strong>Wireless:</strong> UniFi Access Point WiFi 6</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Compute & Storage</h4>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>💻 <strong>Hypervisor:</strong> Dell OptiPlex 7070 (32GB RAM, 1TB NVMe)</li>
+                                <li>💾 <strong>NAS:</strong> Synology DS218+ (2x4TB WD Red drives)</li>
+                                <li>💰 <strong>Total Investment:</strong> ~$2,800 (6 months)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Network Segmentation Strategy</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">VLAN Design</h3>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto mb-6"><code># VLAN Configuration
+VLAN 10: Management (192.168.10.0/24)    # Infrastructure access
+VLAN 20: Lab Servers (192.168.20.0/24)   # VMs and containers
+VLAN 30: DMZ (192.168.30.0/24)           # Public-facing services
+VLAN 40: IoT (192.168.40.0/24)           # Smart home devices
+VLAN 50: Guest (192.168.50.0/24)         # Visitor access</code></pre>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Firewall Rules Implementation</h3>
+                    <pre class="bg-gray-900 text-orange-400 p-4 rounded-lg overflow-x-auto mb-6"><code># pfSense Rules Example
+# Block inter-VLAN communication by default
+pass out on LAN from LAN:network to !LAN:network keep state
+block in on LAN from !LAN:network to LAN:network
+
+# Allow specific services
+pass in on IoT_VLAN proto tcp from IoT:network to LAB:192.168.20.100 port 53
+pass in on GUEST_VLAN proto tcp from GUEST:network to any port { 80 443 53 }</code></pre>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Virtual Infrastructure</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Proxmox VE Setup</h3>
+                    <p class="text-gray-700 mb-4">Running multiple environments on a single hypervisor:</p>
+                    <pre class="bg-gray-900 text-blue-400 p-4 rounded-lg overflow-x-auto mb-6"><code># VM Allocation
+├── Domain Controller (Windows Server 2022) - 4GB RAM
+├── Security Tools VM (Kali Linux) - 8GB RAM
+├── SIEM Server (Ubuntu + ELK Stack) - 8GB RAM
+├── Development Environment (Ubuntu) - 6GB RAM
+└── Vulnerable VMs (Metasploitable, DVWA) - 4GB RAM</code></pre>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Container Services</h3>
+                    <pre class="bg-gray-900 text-purple-400 p-4 rounded-lg overflow-x-auto mb-6"><code># Docker Compose for monitoring stack
+version: '3.8'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123</code></pre>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Monitoring and Alerting</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Key Dashboards Created</h3>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Network Monitoring</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Real-time bandwidth per VLAN</li>
+                                <li>• Traffic flow analysis</li>
+                                <li>• Connection tracking</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Security Events</h4>
+                            <ul class="text-red-700 text-sm space-y-1">
+                                <li>• Failed login attempts</li>
+                                <li>• Blocked connections</li>
+                                <li>• Intrusion detection alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Real-World Learning Outcomes</h2>
+                    
+                    <!-- Skills Grid -->
+                    <div class="grid md:grid-cols-3 gap-6 my-8">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-2">Security+</div>
+                            <div class="text-green-800 font-medium">Passed Nov 2024</div>
+                        </div>
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-6 text-center">
+                            <div class="text-2xl font-bold text-orange-600 mb-2">AWS SAA</div>
+                            <div class="text-orange-800 font-medium">Scheduled Feb 2025</div>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-2">CCNA</div>
+                            <div class="text-blue-800 font-medium">Planning Jun 2025</div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Skills Developed</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">Technical Skills</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• Network Architecture (VLAN design, routing, firewalling)</li>
+                                <li>• Virtualization (Proxmox management, resource allocation)</li>
+                                <li>• Monitoring (ELK stack, Grafana dashboards, alerting)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">Automation & Security</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• Automation (Ansible, PowerShell DSC, Docker)</li>
+                                <li>• Security (Vulnerability management, incident response)</li>
+                                <li>• Cloud Integration (Site-to-site VPN, hybrid setup)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Cost-Benefit Analysis</h2>
+                    
+                    <div class="bg-gray-50 border rounded-lg p-6 mb-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Investment Breakdown</h3>
+                                <ul class="text-gray-700 space-y-2">
+                                    <li>💻 <strong>Hardware:</strong> $2,200</li>
+                                    <li>📀 <strong>Software Licenses:</strong> $400</li>
+                                    <li>⚡ <strong>Power/Internet:</strong> $40/month additional</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Value Gained</h3>
+                                <ul class="text-gray-700 space-y-2">
+                                    <li>🎯 <strong>Training Course Value:</strong> $3,000+</li>
+                                    <li>📈 <strong>Career Development:</strong> Practical IT skills</li>
+                                    <li>🔒 <strong>Home Network:</strong> Enhanced security</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 bg-green-100 rounded-lg">
+                            <p class="text-green-800 font-semibold">
+                                <strong>ROI:</strong> Lab paid for itself within 6 months through improved job prospects and salary negotiations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Lessons Learned</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-green-800 mb-3">What Worked Well</h3>
+                            <ul class="text-green-700 space-y-2">
+                                <li>✅ Started simple with basic pfSense setup</li>
+                                <li>✅ Documented everything in a wiki</li>
+                                <li>✅ Regular VM snapshots before changes</li>
+                                <li>✅ Active in r/homelab community</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-orange-800 mb-3">Pitfalls Avoided</h3>
+                            <ul class="text-orange-700 space-y-2">
+                                <li>⚠️ Resisted over-engineering from start</li>
+                                <li>⚠️ Stuck to planned budget phases</li>
+                                <li>⚠️ Built redundancy in critical services</li>
+                                <li>⚠️ Treated lab with production-level security</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Future Enhancements</h2>
+                    
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-3">Planned Upgrades</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="text-blue-700 space-y-2">
+                                <li>🚢 <strong>Kubernetes Cluster:</strong> 3-node setup for container orchestration</li>
+                                <li>☁️ <strong>Cloud Integration:</strong> Site-to-site VPN with AWS</li>
+                            </ul>
+                            <ul class="text-blue-700 space-y-2">
+                                <li>🛡️ <strong>Advanced Threat Detection:</strong> SOAR platform implementation</li>
+                                <li>🔐 <strong>Zero Trust Architecture:</strong> Implement work project concepts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Essential Tools & Resources</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white border rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Core Technologies</h4>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>🔥 <strong>pfSense:</strong> Open-source firewall/router</li>
+                                <li>📦 <strong>Proxmox VE:</strong> Enterprise virtualization</li>
+                                <li>📊 <strong>ELK Stack:</strong> Elasticsearch, Logstash, Kibana</li>
+                                <li>📈 <strong>Grafana:</strong> Metrics visualization</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Learning Resources</h4>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>📚 <a href="https://docs.netgate.com/pfsense" class="text-blue-600 hover:text-blue-800">pfSense Documentation</a></li>
+                                <li>📖 <a href="https://pve.proxmox.com/wiki" class="text-blue-600 hover:text-blue-800">Proxmox VE Wiki</a></li>
+                                <li>💬 <a href="https://reddit.com/r/homelab" class="text-blue-600 hover:text-blue-800">r/homelab Community</a></li>
+                                <li>🎥 <a href="https://youtube.com/c/TechnoTimLive" class="text-blue-600 hover:text-blue-800">TechnoTim YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Article Footer -->
+                <div class="border-t border-gray-200 pt-8 mt-12">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Fernando McKenzie</h3>
+                            <p class="text-gray-600 text-sm">
+                                IT Operations Specialist passionate about home labs and enterprise technology.
+                            </p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="mailto:fernando.mckenzie@email.com" class="text-gray-600 hover:text-blue-600">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/fernandomckenzie/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://github.com/fmckenzie05" class="text-gray-600 hover:text-blue-600">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i>All Articles
+                    </a>
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-800 font-medium">
+                        Portfolio <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+</body>
+</html> 

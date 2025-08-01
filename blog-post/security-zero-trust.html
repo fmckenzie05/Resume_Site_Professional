@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Implementing Zero-Trust Architecture in Legacy Supply Chain Systems - A complete guide by Fernando McKenzie">
+    <title>Zero-Trust Architecture in Legacy Systems - Fernando McKenzie</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose { max-width: none; }
+        .prose pre { border-radius: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-xl font-bold text-gray-800">SirCodeX</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Technical Blog</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i>All Posts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="bg-gradient-to-r from-red-600 to-red-700 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-sm text-red-200 font-medium mb-4">
+                    <i class="fas fa-shield-alt mr-2"></i>SECURITY
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    Implementing Zero-Trust Architecture in Legacy Supply Chain Systems
+                </h1>
+                <div class="flex flex-wrap items-center gap-6 text-red-100">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar mr-2"></i>
+                        <span>Published on December 15, 2024</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>8 minute read</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-eye mr-2"></i>
+                        <span>2,124 views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Abstract -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-2">Abstract</h3>
+                    <p class="text-blue-800">
+                        This case study details the implementation of zero-trust security principles in a 15-year-old supply chain ERP system, 
+                        achieving a 99.2% reduction in unauthorized access attempts while maintaining operational continuity.
+                    </p>
+                </div>
+
+                <!-- Article Body -->
+                <div class="prose prose-lg max-w-none">
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">The Challenge</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        When I joined our supply chain operations team, we were running a 15-year-old ERP system that had grown organically over time. 
+                        Like many legacy systems, it operated on the traditional "castle and moat" security model - hard exterior defenses with 
+                        assumed trust on the inside. With increasing cyber threats and remote work requirements, this approach was no longer sustainable.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">The Zero-Trust Approach</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Zero-trust security operates on the principle "never trust, always verify." Instead of assuming everything inside the 
+                        network perimeter is safe, every user, device, and application must be continuously authenticated and authorized.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Key Implementation Steps</h3>
+
+                    <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">1. Network Segmentation</h4>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto mb-4"><code># Example network segmentation rules
+# Isolate ERP traffic from general network
+iptables -A FORWARD -s 192.168.10.0/24 -d 192.168.20.0/24 -j DROP
+iptables -A FORWARD -p tcp --dport 1433 -s 192.168.10.0/24 -j ACCEPT</code></pre>
+
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                        <p class="text-yellow-800"><strong>Challenge:</strong> Our legacy system wasn't designed for network segmentation.</p>
+                        <p class="text-yellow-800"><strong>Solution:</strong> Implemented micro-segmentation using software-defined networking (SDN) without disrupting existing operations.</p>
+                    </div>
+
+                    <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">2. Multi-Factor Authentication (MFA)</h4>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li>Integrated Azure AD with our Topline ERP system</li>
+                        <li>Deployed conditional access policies based on user risk</li>
+                        <li>Implemented device compliance requirements</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">3. Continuous Monitoring</h4>
+                    <pre class="bg-gray-900 text-blue-400 p-4 rounded-lg overflow-x-auto mb-6"><code># PowerShell script for monitoring unusual ERP access patterns
+Get-EventLog -LogName Security -InstanceId 4624 | 
+Where-Object {$_.TimeGenerated -gt (Get-Date).AddHours(-1)} |
+Select-Object TimeGenerated, Message</code></pre>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Results and Impact</h2>
+                    
+                    <!-- Results Grid -->
+                    <div class="grid md:grid-cols-3 gap-6 my-8">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                            <div class="text-3xl font-bold text-green-600 mb-2">99.2%</div>
+                            <div class="text-green-800 font-medium">Reduction in unauthorized access</div>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">85%</div>
+                            <div class="text-blue-800 font-medium">Faster threat detection</div>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 text-center">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">$125K</div>
+                            <div class="text-purple-800 font-medium">Annual cost savings</div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Security Improvements</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li><strong>99.2%</strong> reduction in unauthorized access attempts</li>
+                        <li><strong>Zero</strong> successful security breaches since implementation</li>
+                        <li><strong>85%</strong> faster threat detection and response</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Operational Benefits</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li>No disruption to daily operations during rollout</li>
+                        <li><strong>15%</strong> improvement in system performance due to reduced attack surface</li>
+                        <li>Enhanced compliance with SOX and industry regulations</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Cost Savings</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li><strong>$125,000</strong> annual savings from reduced security incidents</li>
+                        <li><strong>40%</strong> reduction in IT security management overhead</li>
+                        <li>Avoided potential <strong>$2.3M</strong> in breach-related costs (industry average)</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Technical Deep Dive</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Architecture Overview</h3>
+                    <pre class="bg-gray-900 text-gray-300 p-4 rounded-lg overflow-x-auto mb-6"><code>[Users] → [Azure AD] → [Conditional Access] → [VPN/SDN] → [ERP System]
+                    ↓
+              [SIEM Monitoring] → [Alert System] → [Response Team]</code></pre>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Key Technologies Used</h3>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white border rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">Identity & Access</h4>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li>• Azure Active Directory</li>
+                                <li>• Conditional Access Policies</li>
+                                <li>• Multi-Factor Authentication</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">Security & Monitoring</h4>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li>• Microsoft Defender</li>
+                                <li>• Splunk SIEM</li>
+                                <li>• PowerShell DSC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Lessons Learned</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-green-800 mb-3">What Worked Well</h3>
+                            <ul class="text-green-700 space-y-2">
+                                <li>✅ Phased implementation prevented disruptions</li>
+                                <li>✅ Comprehensive user training reduced resistance</li>
+                                <li>✅ PowerShell automation saved 80% of manual work</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-orange-800 mb-3">Challenges Overcome</h3>
+                            <ul class="text-orange-700 space-y-2">
+                                <li>⚠️ Legacy integration required custom APIs</li>
+                                <li>⚠️ Initial user resistance to new workflows</li>
+                                <li>⚠️ Performance optimization was critical</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Next Steps</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">Building on this success, we're now implementing:</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li><strong>Machine Learning-based anomaly detection</strong> for unusual user behavior</li>
+                        <li><strong>Automated incident response</strong> workflows</li>
+                        <li><strong>Extended detection and response (XDR)</strong> capabilities</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Resources for Implementation</h2>
+                    
+                    <div class="bg-gray-50 border rounded-lg p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Useful Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://docs.microsoft.com/en-us/security/zero-trust/" class="text-blue-600 hover:text-blue-800">Microsoft Zero Trust Architecture Guide</a></li>
+                            <li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" class="text-blue-600 hover:text-blue-800">NIST Zero Trust Architecture Publication</a></li>
+                            <li><a href="https://docs.microsoft.com/en-us/azure/architecture/" class="text-blue-600 hover:text-blue-800">Azure Architecture Center</a></li>
+                        </ul>
+                        
+                        <h4 class="text-md font-semibold text-gray-800 mt-4 mb-2">Scripts and Templates</h4>
+                        <p class="text-gray-700 text-sm">
+                            All PowerShell scripts and network configuration templates used in this implementation are available in my 
+                            <a href="https://github.com/fmckenzie05/zero-trust-supply-chain" class="text-blue-600 hover:text-blue-800">GitHub repository</a>.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Article Footer -->
+                <div class="border-t border-gray-200 pt-8 mt-12">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Fernando McKenzie</h3>
+                            <p class="text-gray-600 text-sm">
+                                IT Operations Specialist specializing in supply chain technology and security implementations.
+                            </p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="mailto:fernando.mckenzie@email.com" class="text-gray-600 hover:text-blue-600">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/fernandomckenzie/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://github.com/fmckenzie05" class="text-gray-600 hover:text-blue-600">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Related Articles</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="aws-migration.html" class="block bg-white border rounded-lg p-6 hover:shadow-md transition-shadow">
+                            <div class="text-sm text-orange-600 font-medium mb-2">CLOUD MIGRATION</div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">AWS Migration Strategy: From On-Premise to Cloud-Native</h4>
+                            <p class="text-gray-600 text-sm">Lessons learned migrating critical supply chain applications to AWS while maintaining 99.9% uptime.</p>
+                        </a>
+                        <a href="home-lab.html" class="block bg-white border rounded-lg p-6 hover:shadow-md transition-shadow">
+                            <div class="text-sm text-green-600 font-medium mb-2">AUTOMATION</div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Building My Home Lab: Network Segmentation & Monitoring</h4>
+                            <p class="text-gray-600 text-sm">Setting up a professional-grade home lab with pfSense, Proxmox, and enterprise monitoring tools.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i>All Articles
+                    </a>
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-800 font-medium">
+                        Portfolio <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</body>
+</html> 

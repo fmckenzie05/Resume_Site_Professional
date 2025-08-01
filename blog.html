@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Fernando A. McKenzie</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/themes.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/fm-logo-clean.svg" alt="FM Logo" height="30" class="mr-2">
+                <span>Fernando McKenzie</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="material-icons" style="font-size: 16px;">dark_mode</i>
+                            <span>Dark</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="mb-3">Fernando McKenzie's Blog</h1>
+                    <p class="lead">Insights on IT Support, Enterprise Architecture, and Technology Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-4">
+                        <button class="btn btn-outline-primary btn-sm mr-2 category-filter active" data-category="all">All Posts</button>
+                        <button class="btn btn-outline-primary btn-sm mr-2 category-filter" data-category="it">Information Technology</button>
+                        <button class="btn btn-outline-primary btn-sm mr-2 category-filter" data-category="supply-chain">Supply Chain</button>
+                        <button class="btn btn-outline-primary btn-sm category-filter" data-category="digital-transformation">Digital Transformation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                <!-- Blog Post 6 -->
+                    <article class="blog-post mb-5" data-category="it supply-chain">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Reducing System Downtime and Optimizing ERP Systems</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> August 1, 2025</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> IT, Supply Chain</span>
+                                </div>
+                                <p class="card-text">Implementing proactive monitoring and maintenance strategies reduced system downtime by 40%. Optimization of enterprise resource planning (ERP) systems helped in achieving higher efficiency.</p>
+                                <a href="blog-post/remote-infrastructure-2020.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 7 -->
+                    <article class="blog-post mb-5" data-category="supply-chain it">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Leading Cloud-Based Inventory Management</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> August 1, 2025</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Supply Chain, IT</span>
+                                </div>
+                                <p class="card-text">Spearheaded the implementation of a cloud-based inventory management system, resulting in a 35% reduction of stock-outs and increased operational efficiency.</p>
+                                <a href="blog-post/kubernetes-containers-2022.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 8 -->
+                    <article class="blog-post mb-5" data-category="supply-chain it">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Integrating Technology in Supply Chain Management</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> August 1, 2025</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Supply Chain, IT</span>
+                                </div>
+                                <p class="card-text">Using technology to transform supply chain management, enhancing processes, and creating competitive advantages.</p>
+                                <a href="blog-post/devops-supply-chain-2019.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 9 -->
+                    <article class="blog-post mb-5" data-category="it">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Empowering Teams Through Cross-Functional Leadership</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> August 1, 2025</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> IT</span>
+                                </div>
+                                <p class="card-text">Led a cross-functional team across IT and operations, driving collaboration and achieving significant improvements in workflow efficiency.</p>
+                                <a href="blog-post/security-zero-trust.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 10 -->
+                    <article class="blog-post mb-5" data-category="digital-transformation">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Achieving Milestones in Digital Transformation</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> August 1, 2025</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Digital Transformation</span>
+                                </div>
+                                <p class="card-text">Successfully delivered digital transformation initiatives, leading to reduced operational costs and improved efficiency.</p>
+                                <a href="blog-post/edge-computing-2025.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Blog Post 1 -->
+                    <article class="blog-post mb-5" data-category="supply-chain digital-transformation">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">The Future of Supply Chain: AI and Machine Learning</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> January 15, 2024</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Supply Chain, Digital Transformation</span>
+                                </div>
+                                <p class="card-text">Artificial Intelligence and Machine Learning are revolutionizing supply chain operations across industries. From predictive analytics for demand forecasting to automated warehouse operations, these technologies are creating unprecedented efficiencies.</p>
+                                <p>Key areas where AI is making an impact:</p>
+                                <ul>
+                                    <li><strong>Demand Forecasting:</strong> ML algorithms analyze historical data, market trends, and external factors to predict future demand with greater accuracy.</li>
+                                    <li><strong>Route Optimization:</strong> AI-powered systems calculate the most efficient delivery routes in real-time, considering traffic, weather, and delivery priorities.</li>
+                                    <li><strong>Inventory Management:</strong> Predictive models help maintain optimal stock levels, reducing both stockouts and excess inventory.</li>
+                                </ul>
+                                <p>As we move forward, companies that embrace these technologies will have a significant competitive advantage in the market.</p>
+                                <a href="blog-post/ai-supply-chain-2024.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-post mb-5" data-category="it">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Cloud Migration Best Practices for Enterprise</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> January 8, 2024</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Information Technology</span>
+                                </div>
+                                <p class="card-text">Migrating enterprise applications to the cloud requires careful planning and execution. Based on my experience leading multiple cloud migration projects, here are essential best practices to ensure success.</p>
+                                <h5>1. Assessment and Planning</h5>
+                                <p>Before any migration, conduct a thorough assessment of your current infrastructure, applications, and dependencies. Create a detailed migration roadmap that prioritizes applications based on business impact and technical complexity.</p>
+                                <h5>2. Choose the Right Cloud Model</h5>
+                                <p>Evaluate whether public, private, or hybrid cloud best suits your organization's needs. Consider factors like security requirements, compliance, and cost.</p>
+                                <h5>3. Security First Approach</h5>
+                                <p>Implement robust security measures from the start, including encryption, access controls, and regular security audits. Don't treat security as an afterthought.</p>
+                                <h5>4. Phased Migration</h5>
+                                <p>Avoid the "big bang" approach. Migrate applications in phases, starting with less critical systems to gain experience and confidence.</p>
+                                <a href="blog-post/aws-migration.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-post mb-5" data-category="supply-chain">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Blockchain in Supply Chain: Beyond the Hype</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> December 28, 2023</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Supply Chain</span>
+                                </div>
+                                <p class="card-text">While blockchain technology has been surrounded by hype, its practical applications in supply chain management are proving to be transformative. Let's explore real-world use cases and benefits.</p>
+                                <h5>Transparency and Traceability</h5>
+                                <p>Blockchain provides an immutable record of every transaction and movement in the supply chain. This is particularly valuable for industries like food and pharmaceuticals where tracking origin and handling is crucial.</p>
+                                <h5>Smart Contracts</h5>
+                                <p>Automated contract execution based on predefined conditions reduces manual intervention and speeds up processes. For example, payments can be automatically triggered when goods reach specific checkpoints.</p>
+                                <h5>Counterfeit Prevention</h5>
+                                <p>By creating unique digital identities for products on the blockchain, companies can effectively combat counterfeiting and ensure product authenticity.</p>
+                                <p>While implementation challenges remain, including scalability and standardization, blockchain is moving from concept to reality in supply chain operations.</p>
+                                <a href="blog-post/legacy-cloud-migration-2018.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 4 -->
+                    <article class="blog-post mb-5" data-category="it digital-transformation">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Building Resilient IT Infrastructure for Modern Business</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> December 15, 2023</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> IT, Digital Transformation</span>
+                                </div>
+                                <p class="card-text">In today's fast-paced business environment, IT infrastructure must be not just functional, but resilient. Recent global events have highlighted the importance of building systems that can adapt to unexpected challenges.</p>
+                                <h5>Key Components of Resilient Infrastructure</h5>
+                                <ul>
+                                    <li><strong>Redundancy:</strong> Implement backup systems and failover mechanisms to ensure continuous operation during outages.</li>
+                                    <li><strong>Scalability:</strong> Design systems that can quickly scale up or down based on demand.</li>
+                                    <li><strong>Automation:</strong> Use automation tools to reduce human error and speed up recovery processes.</li>
+                                    <li><strong>Monitoring:</strong> Implement comprehensive monitoring to detect and address issues before they become critical.</li>
+                                </ul>
+                                <h5>Disaster Recovery Planning</h5>
+                                <p>A robust disaster recovery plan is essential. Regular testing and updates ensure your organization can quickly recover from any disruption, minimizing downtime and data loss.</p>
+                                <a href="blog-post/terraform-infrastructure-2023.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 5 -->
+                    <article class="blog-post mb-5" data-category="supply-chain it">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">IoT Sensors: Revolutionizing Inventory Management</h2>
+                                <div class="post-meta mb-3">
+                                    <span class="text-muted"><i class="material-icons align-middle">calendar_today</i> December 1, 2023</span>
+                                    <span class="text-muted ml-3"><i class="material-icons align-middle">label</i> Supply Chain, IT</span>
+                                </div>
+                                <p class="card-text">Internet of Things (IoT) sensors are transforming how businesses manage inventory, providing real-time visibility and automation capabilities that were previously impossible.</p>
+                                <h5>Real-Time Tracking</h5>
+                                <p>IoT sensors provide continuous updates on inventory levels, location, and condition. This real-time data enables businesses to make informed decisions quickly and reduce the risk of stockouts or overstocking.</p>
+                                <h5>Environmental Monitoring</h5>
+                                <p>For sensitive products, IoT sensors monitor environmental conditions like temperature, humidity, and shock. This is crucial for pharmaceuticals, food products, and electronics.</p>
+                                <h5>Automated Reordering</h5>
+                                <p>Smart shelves equipped with weight sensors can automatically trigger reorder points when inventory reaches predetermined levels, streamlining the procurement process.</p>
+                                <h5>Implementation Considerations</h5>
+                                <p>While the benefits are clear, implementing IoT requires careful planning around data security, integration with existing systems, and ROI analysis. Start with pilot projects to prove value before full-scale deployment.</p>
+                                <a href="blog-post/ml-predictive-maintenance-2021.html" class="btn btn-sm btn-primary mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Fernando A. McKenzie. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="https://linkedin.com/in/fernandomckenzie" target="_blank" class="text-white mr-3"><i class="material-icons">link</i> LinkedIn</a>
+                <a href="https://github.com/fmckenzie05" target="_blank" class="text-white"><i class="material-icons">code</i> GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
