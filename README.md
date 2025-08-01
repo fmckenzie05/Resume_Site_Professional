@@ -55,7 +55,7 @@ Since this is a static website with CDN dependencies, you have several options:
 **Manual Way:**
 ```bash
 # Make sure you're in the project directory first
-cd "C:\Users\ferna\OneDrive\Documents\Websites\Me_Resume"
+cd "C:\Users\User\Documents\Websites\Me_Resume"
 
 # Python 3 (most common)
 python -m http.server 8000
